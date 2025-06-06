@@ -1,0 +1,32 @@
+#Portainer
+version: "3.8"
+
+services:
+  portainer:
+    image: portainer/portainer-ce:lts
+    container_name: portainer
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
+
+#Uptime Kuma
+version: "3.8"
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime-kuma
+    restart: unless-stopped
+    ports:
+      - "3001:3001"  # Web UI available at http://<host-ip>:3001
+    volumes:
+      - /opt/docker-config/uptime-kuma:/app/data # stores your settings, monitored services, etc.
+    environment:
+      - TZ=America/New_York  # Replace with your local timezone
