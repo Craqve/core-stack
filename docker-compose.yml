@@ -30,3 +30,14 @@ services:
       - /opt/docker-config/uptime-kuma:/app/data # stores your settings, monitored services, etc.
     environment:
       - TZ=America/New_York  # Replace with your local timezone
+
+#Nginx
+web:
+  image: nginx
+  volumes:
+   - ./templates:/etc/nginx/templates
+  ports:
+   - "8080:80"
+  environment:
+   - NGINX_HOST=$HOST
+   - NGINX_PORT=80

@@ -2,8 +2,9 @@
 
 This repository contains a Docker Compose stack for essential homelab infrastructure tools. It currently includes:
 
-- [Portainer](https://www.portainer.io/) – Docker management GUI
-- [Uptime Kuma](https://github.com/louislam/uptime-kuma) – Self-hosted monitoring/status page
+- [Portainer](https://www.portainer.io/) – Docker management GUI  
+- [Uptime Kuma](https://github.com/louislam/uptime-kuma) – Self-hosted monitoring/status page  
+- [NGINX](https://hub.docker.com/_/nginx) – Lightweight reverse proxy for routing internal services
 
 ## 📦 Setup Instructions
 
